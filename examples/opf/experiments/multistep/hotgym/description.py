@@ -230,7 +230,7 @@ config = {
 
             'inputWidth': 2048,
 
-            'seed': 1960,
+            'seed': 123455,
 
             # Temporal Pooler implementation selector (see _getTPClass in
             # CLARegion.py).
