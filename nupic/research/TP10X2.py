@@ -20,6 +20,10 @@
 # http://numenta.org/licenses/
 # ----------------------------------------------------------------------
 
+import csv
+import os
+import pkg_resources
+
 import numpy
 from numpy import *
 
@@ -313,6 +317,21 @@ class TP10X2(TP):
     self.currentOutput = y.reshape((self.numberOfCols, self.cellsPerColumn))
     self.avgLearnedSeqLength = self.cells4.getAvgLearnedSeqLength()
     self._copyAllocatedStates()
+
+    f = pkg_resources.resource_filename("tmp_mess", "computedOutput.txt")
+
+    with open(f, 'r') as fin:
+      reader=csv.reader(fin)
+      for i,row in enumerate(reader):
+        if i+1 == self.iterationIdx:
+          assert int(row[0]) == self.iterationIdx, str((row[0], self.iterationIdx))
+          for j, x in enumerate(row[1:]):
+            assert int(x) == y[j], str((i, j, x, y[j]))
+
+    # if self.iterationIdx <= 476:
+    #   with open(f, 'a') as output_file:
+    #     numpy.savetxt(output_file, numpy.array([[self.iterationIdx]]), newline=',', fmt='%d')
+    #     numpy.savetxt(output_file, numpy.atleast_2d(y), delimiter=',', fmt='%d')
 
 
     # ========================================================================
