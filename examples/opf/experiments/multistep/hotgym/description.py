@@ -212,7 +212,7 @@ config = {
         # TP is necessary for making temporal predictions, such as predicting
         # the next inputs.  Without TP, the model is only capable of
         # reconstructing missing sensor inputs (via SP).
-        'tpEnable' : False,
+        'tpEnable' : True,
 
         'tpParams': {
             # TP diagnostic output verbosity control;
@@ -230,7 +230,7 @@ config = {
 
             'inputWidth': 2048,
 
-            'seed': 123455,
+            'seed': 1960,
 
             # Temporal Pooler implementation selector (see _getTPClass in
             # CLARegion.py).
@@ -325,7 +325,7 @@ config = {
 
   'predictionSteps': [1, 5],
   'predictedField': 'consumption',
-  'numRecords': 4000,
+  'numRecords': 5,
 }
 # end of config dictionary
 
