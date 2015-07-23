@@ -325,7 +325,7 @@ config = {
 
   'predictionSteps': [1, 5],
   'predictedField': 'consumption',
-  'numRecords': 50,
+  'numRecords': 500,
 }
 # end of config dictionary
 
