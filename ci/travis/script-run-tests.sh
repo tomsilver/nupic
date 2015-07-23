@@ -30,10 +30,10 @@ echo
 # Python unit tests and prep for coveralls reporting
 # ${TRAVIS_BUILD_DIR}/scripts/run_nupic_tests -u --coverage || exit
 
-#mv ${TRAVIS_BUILD_DIR}/.coverage ${TRAVIS_BUILD_DIR}/.coverage_unit
+mv ${TRAVIS_BUILD_DIR}/.coverage ${TRAVIS_BUILD_DIR}/.coverage_unit
 # Python integration tests and prep for coveralls reporting
-# ${TRAVIS_BUILD_DIR}/scripts/run_nupic_tests -i --coverage || exit
+${TRAVIS_BUILD_DIR}/scripts/run_nupic_tests -i --coverage || exit
 
 #mv ${TRAVIS_BUILD_DIR}/.coverage ${TRAVIS_BUILD_DIR}/.coverage_integration
 
-python ${TRAVIS_BUILD_DIR}/tests/integration/nupic/opf/hotgym_regression_test.py
+# python ${TRAVIS_BUILD_DIR}/tests/integration/nupic/opf/hotgym_regression_test.py
