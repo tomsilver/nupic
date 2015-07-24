@@ -65,7 +65,7 @@ class HotgymRegressionTest(unittest.TestCase):
       # Changes that affect prediction results will cause this test to fail.
       # If the change is understood and reviewers agree that there has not been a
       # regression then this value can be updated to reflect the new result.
-      self.assertAlmostEqual(float(lastRow[12]), 20.1318953043)
+      self.assertAlmostEqual(float(lastRow[12]), 6.0933712258)
 
     finally:
       shutil.rmtree(resultsDir, ignore_errors=True)
