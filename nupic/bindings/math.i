@@ -97,7 +97,7 @@ _MATH = _math
 
 // Perform necessary library initialization (in C++).
 import_array();
-  
+
 %}
 
 %include <nupic/bindings/types.i>
@@ -168,7 +168,7 @@ import_array();
 		  x_min, x_max, 1, 65535);
     return y.forPython();
   }
-  */			 
+  */
 
   PyObject* winnerTakesAll_3(size_t k, size_t seg_size, PyObject* py_x)
   {
@@ -197,10 +197,20 @@ import_array();
 
 // For unpickling.
 %pythoncode %{
+
+def __init__(self, seed=None):
+  if seed is not None:
+    print "asmdlkamdsl: ", seed
+    self.this = _MATH.new_Random(seed)
+  else:
+    print "akndslankld"
+    self.this = _MATH.new_Random()
+
 def __setstate__(self, state):
   self.this = _MATH.new_Random(1)
   self.thisown = 1
   self.setState(state)
+
 %}
 
 // For pickling (should be compatible with setState()).
