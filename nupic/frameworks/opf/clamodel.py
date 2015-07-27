@@ -481,6 +481,7 @@ class CLAModel(Model):
     tp.setParameter('topDownMode', topDownCompute)
     tp.setParameter('inferenceMode', self.isInferenceEnabled())
     tp.setParameter('learningMode', self.isLearningEnabled())
+
     tp.prepareInputs()
     tp.compute()
 
@@ -614,7 +615,7 @@ class CLAModel(Model):
 
       if not self._predictedFieldName in self._input:
         raise ValueError(
-          "Expected predicted field '%s' in input row, but was not found!" 
+          "Expected predicted field '%s' in input row, but was not found!"
           % self._predictedFieldName
         )
       # Calculate the anomaly score using the active columns

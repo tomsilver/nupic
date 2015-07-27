@@ -168,7 +168,7 @@ config = {
             # Spatial Pooler implementation selector, see getSPClass
             # in py/regions/SPRegion.py for details
             # 'py' (default), 'cpp' (speed optimized, new)
-            'spatialImp' : 'cpp',
+            'spatialImp' : 'NOT A REAL THING',
 
             'globalInhibition': 1,
 
