@@ -313,7 +313,7 @@ class RecordSensor(PyRegion):
           print nonzeroset
           assert nonzeroset == set(range(21))
 
-        prevOffset = nextOffset
+          prevOffset = nextOffset
 
       self._outputValues['sourceEncodings'] = sourceEncodings
 
