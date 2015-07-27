@@ -303,11 +303,22 @@ class RecordSensor(PyRegion):
       prevOffset = 0
       sourceEncodings = []
       bitData = outputs["dataOut"]
-      for encoder in encoders:
+      for i, encoder in enumerate(encoders):
         nextOffset = prevOffset + encoder.getWidth()
         sourceEncodings.append(bitData[prevOffset:nextOffset])
+
+        if i == 0:
+          nonzeroset = set(numpy.nonzero(bitData[prevOffset:nextOffset])[0])
+          print nonzeroset
+          assert nonzeroset == set(range(21))
+
         prevOffset = nextOffset
+
       self._outputValues['sourceEncodings'] = sourceEncodings
+
+      # print "FLAG"
+      # print numpy.nonzero(self._outputValues['sourceEncodings'])[0]
+
 
       # Execute post-encoding filters, if any
       for filter in self.postEncodingFilters:
