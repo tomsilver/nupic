@@ -298,6 +298,7 @@ class TP10X2(TP):
     self.iterationIdx = self.iterationIdx + 1
 
     print "ITER: ", self.iterationIdx
+    print "Bottom up input: ", set(numpy.nonzero(bottomUpInput)[0])
 
     #if self.iterationIdx >= 1000040:
     #  self.verbosity=4                           # DEBUG
