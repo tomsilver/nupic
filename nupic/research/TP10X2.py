@@ -321,16 +321,16 @@ class TP10X2(TP):
 
     y = self.cells4.compute(bottomUpInput, computeInfOutput, enableLearn)
 
-    # if self.iterationIdx == 2:
-    #   print "QV: "
-    #   onColumns = set(numpy.nonzero(bottomUpInput)[0])
-    #   onColumns2 = set([1280, 773, 264, 1930, 526, 529, 924, 1831, 429, 1783, 181, 951, 1720, 1721, 1725, 831, 194, 1476, 1735, 1865, 1527, 1363, 1749, 982, 856, 1113, 346, 1244, 864, 1893, 1767, 361, 1003, 1649, 1267, 245, 1015, 1144, 1727, 1279])
+    if self.iterationIdx == 2:
+      print "QV: "
+      onColumns = set(numpy.nonzero(bottomUpInput)[0])
+      onColumns2 = set([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 277, 278, 755, 260, 265, 768, 261, 266, 262, 263, 769, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 267, 268, 258, 269, 270, 761, 771, 770, 271, 272, 766, 273, 259, 274, 751, 752, 753, 754, 275, 756, 757, 758, 759, 760, 276, 762, 763, 764, 765, 264, 767])
 
-    #   if not onColumns == onColumns2:
-    #     print "Columns are different"
-    #     print onColumns - onColumns2
-    #     print onColumns2 - onColumns
-    #     assert False
+      if not onColumns == onColumns2:
+        print "Columns are different"
+        print onColumns - onColumns2
+        print onColumns2 - onColumns
+        assert False
 
     # if self.iterationIdx == 2:
     #   print "QT: "
