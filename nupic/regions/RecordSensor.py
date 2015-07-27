@@ -304,10 +304,11 @@ class RecordSensor(PyRegion):
       sourceEncodings = []
       bitData = outputs["dataOut"]
       for i, encoder in enumerate(encoders):
-        nextOffset = prevOffset + encoder.getWidth()
-        sourceEncodings.append(bitData[prevOffset:nextOffset])
-
         if i == 0:
+
+          nextOffset = prevOffset + encoder.getWidth()
+          sourceEncodings.append(bitData[prevOffset:nextOffset])
+
           nonzeroset = set(numpy.nonzero(bitData[prevOffset:nextOffset])[0])
           print nonzeroset
           assert nonzeroset == set(range(21))
