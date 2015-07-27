@@ -158,7 +158,7 @@ config = {
             'sensorAutoReset' : None,
         },
 
-        'spEnable': True,
+        'spEnable': False,
 
         'spParams': {
             # SP diagnostic output verbosity control;
@@ -325,7 +325,7 @@ config = {
 
   'predictionSteps': [1, 5],
   'predictedField': 'consumption',
-  'numRecords': 189,
+  'numRecords': 4000,
 }
 # end of config dictionary
 
