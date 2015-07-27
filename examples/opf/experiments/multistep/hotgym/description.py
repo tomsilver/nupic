@@ -300,7 +300,7 @@ config = {
 
         'clParams': {
             # Classifier implementation selection.
-            'implementation': 'py',
+            'implementation': 'cpp',
 
             'regionName' : 'CLAClassifierRegion',
 
@@ -325,7 +325,7 @@ config = {
 
   'predictionSteps': [1, 5],
   'predictedField': 'consumption',
-  'numRecords': 4000,
+  'numRecords': 189,
 }
 # end of config dictionary
 
