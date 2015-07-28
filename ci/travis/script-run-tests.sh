@@ -25,12 +25,12 @@ echo Running script-run-tests.sh...
 echo
 
 # legacy binary tests
-${TRAVIS_BUILD_DIR}/bin/py_region_test || exit
+#${TRAVIS_BUILD_DIR}/bin/py_region_test || exit
 
 # Python unit tests and prep for coveralls reporting
-${TRAVIS_BUILD_DIR}/scripts/run_nupic_tests -u --coverage || exit
+#${TRAVIS_BUILD_DIR}/scripts/run_nupic_tests -u --coverage || exit
 
-mv ${TRAVIS_BUILD_DIR}/.coverage ${TRAVIS_BUILD_DIR}/.coverage_unit
+#mv ${TRAVIS_BUILD_DIR}/.coverage ${TRAVIS_BUILD_DIR}/.coverage_unit
 # Python integration tests and prep for coveralls reporting
 ${TRAVIS_BUILD_DIR}/scripts/run_nupic_tests -i --coverage || exit
 

@@ -208,7 +208,7 @@ def main(parser, parse_args):
     tests.add(os.path.join(root, "unit"))
 
   if options.integration or options.all:
-    tests.add(os.path.join(root, "integration"))
+    tests.add(os.path.join(root, "integration", "nupic", "opf"))
 
   if options.swarming or options.all:
     tests.add(os.path.join(root, "swarming"))
