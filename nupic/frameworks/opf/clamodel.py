@@ -1062,6 +1062,9 @@ class CLAModel(Model):
 
     encoder = MultiEncoder(enabledEncoders)
 
+    print "enabledEncoders:"
+    print enabledEncoders
+
     sensor.encoder = encoder
     sensor.disabledEncoder = MultiEncoder(disabledEncoders)
     sensor.dataSource = DataBuffer()
@@ -1075,7 +1078,8 @@ class CLAModel(Model):
       spParams = spParams.copy()
 
       # print "WTF"
-      # print spParams
+      print "SP PARAMS:"
+      print spParams
       # assert False
 
 
@@ -1098,6 +1102,10 @@ class CLAModel(Model):
 
     if tpEnable:
       tpParams = tpParams.copy()
+
+      print "TP PARAMS:"
+      print tpParams
+
       if prevRegion == 'sensor':
         tpParams['inputWidth'] = tpParams['columnCount'] = prevRegionWidth
       else:
@@ -1123,6 +1131,10 @@ class CLAModel(Model):
 
     if clEnable and clParams is not None:
       clParams = clParams.copy()
+
+      print "Cl params:"
+      print clParams
+
       clRegionName = clParams.pop('regionName')
       self.__logger.debug("Adding %s; clParams: %r" % (clRegionName,
                                                       clParams))
