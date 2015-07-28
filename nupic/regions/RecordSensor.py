@@ -310,8 +310,8 @@ class RecordSensor(PyRegion):
           sourceEncodings.append(bitData[prevOffset:nextOffset])
 
           nonzeroset = set(numpy.nonzero(bitData[prevOffset:nextOffset])[0])
-          print nonzeroset
-          assert nonzeroset == set(range(21))
+          # print nonzeroset
+          # assert nonzeroset == set(range(21))
 
           prevOffset = nextOffset
 
