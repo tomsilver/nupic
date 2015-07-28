@@ -1035,6 +1035,7 @@ class CLAModel(Model):
     n = Network()
 
     print sensorParams
+    print spEnable
     print spParams
     print tpParams
     print clParams
