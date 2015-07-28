@@ -1071,6 +1071,9 @@ class CLAModel(Model):
 
     # SP is not enabled for spatial classification network
     if spEnable:
+      print "WTF"
+      assert False
+
       spParams = spParams.copy()
       spParams['inputWidth'] = prevRegionWidth
       self.__logger.debug("Adding SPRegion; spParams: %r" % spParams)
