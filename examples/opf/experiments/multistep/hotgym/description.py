@@ -85,6 +85,9 @@ from nupic.frameworks.opf.opftaskdriver import (
 #      )
 #      updateConfigFromSubConfig(config)
 #      applyValueGettersToContainer(config)
+
+assert False
+
 config = {
     # Type of model that the rest of these parameters apply to.
     'model': "CLA",
@@ -212,7 +215,7 @@ config = {
         # TP is necessary for making temporal predictions, such as predicting
         # the next inputs.  Without TP, the model is only capable of
         # reconstructing missing sensor inputs (via SP).
-        'tpEnable' : False,
+        'tpEnable' : True,
 
         'tpParams': {
             # TP diagnostic output verbosity control;
