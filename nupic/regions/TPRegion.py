@@ -483,6 +483,8 @@ class TPRegion(PyRegion):
     # Get our inputs as numpy array
     buInputVector = inputs['bottomUpIn']
 
+    print "bu input vector: ", set(numpy.nonzero(buInputVector)[0])
+
     # Handle reset signal
     resetSignal = False
     if 'resetIn' in inputs:
