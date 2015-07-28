@@ -1034,12 +1034,6 @@ class CLAModel(Model):
     # Create the network
     n = Network()
 
-    print sensorParams
-    print spEnable
-    print spParams
-    print tpParams
-    print clParams
-    print anomalyParams
 
     #--------------------------------------------------
     # Add the Sensor
