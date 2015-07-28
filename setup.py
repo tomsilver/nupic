@@ -530,7 +530,7 @@ def prepareNupicCore(options, platform, bitness):
   if nupicCoreReleaseDir is not None:
     nupicCoreReleaseDir = os.path.expanduser(nupicCoreReleaseDir)
   nupicCoreSourceDir = None
-  fetchNupicCore = False
+  fetchNupicCore = True
 
   if nupicCoreReleaseDir:
     # User specified that they have their own nupic.core
