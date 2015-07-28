@@ -145,9 +145,9 @@ config = {
             # is correct here as opposed to 'columns')
             'synPermConnected': $SP_PERM_CONNECTED,
 
-            'synPermActiveInc': 0.05,
+            'synPermActiveInc': 0.1,
 
-            'synPermInactiveDec': 0.0006,
+            'synPermInactiveDec': 0.01,
 
             'maxBoost': 2.0
         },
