@@ -212,7 +212,7 @@ config = {
         # TP is necessary for making temporal predictions, such as predicting
         # the next inputs.  Without TP, the model is only capable of
         # reconstructing missing sensor inputs (via SP).
-        'tpEnable' : True,
+        'tpEnable' : False,
 
         'tpParams': {
             # TP diagnostic output verbosity control;
