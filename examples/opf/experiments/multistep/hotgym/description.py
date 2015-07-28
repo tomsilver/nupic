@@ -159,7 +159,7 @@ config = {
             'sensorAutoReset' : None,
         },
 
-        'spEnable': False,
+        'spEnable': True,
 
         'spParams': {
             # SP diagnostic output verbosity control;
@@ -169,7 +169,7 @@ config = {
             # Spatial Pooler implementation selector, see getSPClass
             # in py/regions/SPRegion.py for details
             # 'py' (default), 'cpp' (speed optimized, new)
-            'spatialImp' : 'NOT A REAL THING',
+            'spatialImp' : 'cpp',
 
             'globalInhibition': 1,
 
@@ -183,7 +183,7 @@ config = {
             # SP inhibition control (absolute value);
             # Maximum number of active columns in the SP region's output (when
             # there are more, the weaker ones are suppressed)
-            'numActiveColumnsPerInhArea': 1,
+            'numActiveColumnsPerInhArea': 40,
 
             'seed': 1956,
 
@@ -191,7 +191,7 @@ config = {
             # What percent of the columns's receptive field is available
             # for potential synapses. At initialization time, we will
             # choose potentialPct * (2*potentialRadius+1)^2
-            'potentialPct': 0.5,
+            'potentialPct': 0.8,
 
             # The default connected threshold. Any synapse whose
             # permanence value is above the connected threshold is
@@ -204,9 +204,11 @@ config = {
             # is correct here as opposed to 'columns')
             'synPermConnected': 0.1,
 
-            'synPermActiveInc': 0.1,
+            'synPermActiveInc': 0.05,
 
-            'synPermInactiveDec': 0.01,
+            'synPermInactiveDec': 0.0005,
+
+            'maxBoost': 2.0
         },
 
         # Controls whether TP is enabled or disabled;
@@ -311,7 +313,7 @@ config = {
 
             # This controls how fast the classifier learns/forgets. Higher values
             # make it adapt faster and forget older patterns faster.
-            'alpha': 0.0001,
+            'alpha': 0.001,
 
             # This is set after the call to updateConfigFromSubConfig and is
             # computed from the aggregationInfo and predictAheadTime.
@@ -326,7 +328,7 @@ config = {
 
   'predictionSteps': [1, 5],
   'predictedField': 'consumption',
-  'numRecords': 189,
+  'numRecords': 4000,
 }
 # end of config dictionary
 
