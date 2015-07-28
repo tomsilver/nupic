@@ -297,8 +297,8 @@ class TP10X2(TP):
 
     self.iterationIdx = self.iterationIdx + 1
 
-    print "ITER: ", self.iterationIdx
-    print "Bottom up input: ", set(numpy.nonzero(bottomUpInput)[0])
+    # print "ITER: ", self.iterationIdx
+    # print "Bottom up input: ", set(numpy.nonzero(bottomUpInput)[0])
 
     #if self.iterationIdx >= 1000040:
     #  self.verbosity=4                           # DEBUG
@@ -316,9 +316,9 @@ class TP10X2(TP):
     # Run compute and retrieve selected state and member variables
     self._setStatePointers()
 
-    if self.iterationIdx <= 37:
-      for i in range(self.cellsPerColumn):
-        self.printCell(c=1280, i=i)
+    # if self.iterationIdx <= 37:
+    #   for i in range(self.cellsPerColumn):
+    #     self.printCell(c=1280, i=i)
 
     y = self.cells4.compute(bottomUpInput, computeInfOutput, enableLearn)
 
