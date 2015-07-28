@@ -481,7 +481,6 @@ class CLAModel(Model):
     tp.setParameter('topDownMode', topDownCompute)
     tp.setParameter('inferenceMode', self.isInferenceEnabled())
     tp.setParameter('learningMode', self.isLearningEnabled())
-
     tp.prepareInputs()
     tp.compute()
 
@@ -1035,6 +1034,12 @@ class CLAModel(Model):
     # Create the network
     n = Network()
 
+    print sensorParams
+    print spParams
+    print tpParams
+    print clParams
+    print anomalyParams
+
 
     #--------------------------------------------------
     # Add the Sensor
@@ -1062,9 +1067,6 @@ class CLAModel(Model):
 
     encoder = MultiEncoder(enabledEncoders)
 
-    print "enabledEncoders:"
-    print enabledEncoders
-
     sensor.encoder = encoder
     sensor.disabledEncoder = MultiEncoder(disabledEncoders)
     sensor.dataSource = DataBuffer()
@@ -1074,15 +1076,7 @@ class CLAModel(Model):
 
     # SP is not enabled for spatial classification network
     if spEnable:
-
       spParams = spParams.copy()
-
-      print "WTF"
-      print "SP PARAMS:"
-      print spParams
-      # assert False
-
-
       spParams['inputWidth'] = prevRegionWidth
       self.__logger.debug("Adding SPRegion; spParams: %r" % spParams)
       n.addRegion("SP", "py.SPRegion", json.dumps(spParams))
@@ -1102,10 +1096,6 @@ class CLAModel(Model):
 
     if tpEnable:
       tpParams = tpParams.copy()
-
-      print "TP PARAMS:"
-      print tpParams
-
       if prevRegion == 'sensor':
         tpParams['inputWidth'] = tpParams['columnCount'] = prevRegionWidth
       else:
@@ -1131,10 +1121,6 @@ class CLAModel(Model):
 
     if clEnable and clParams is not None:
       clParams = clParams.copy()
-
-      print "Cl params:"
-      print clParams
-
       clRegionName = clParams.pop('regionName')
       self.__logger.debug("Adding %s; clParams: %r" % (clRegionName,
                                                       clParams))
