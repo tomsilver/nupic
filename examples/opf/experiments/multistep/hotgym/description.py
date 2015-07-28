@@ -182,7 +182,7 @@ config = {
             # SP inhibition control (absolute value);
             # Maximum number of active columns in the SP region's output (when
             # there are more, the weaker ones are suppressed)
-            'numActiveColumnsPerInhArea': 40,
+            'numActiveColumnsPerInhArea': 1,
 
             'seed': 1956,
 
