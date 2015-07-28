@@ -86,8 +86,6 @@ from nupic.frameworks.opf.opftaskdriver import (
 #      updateConfigFromSubConfig(config)
 #      applyValueGettersToContainer(config)
 
-assert False
-
 config = {
     # Type of model that the rest of these parameters apply to.
     'model': "CLA",

@@ -386,6 +386,8 @@ def _runExperimentImpl(options, model=None):
     expIface.convertNupicEnvToOPF()
     experimentTasks = expIface.getModelControl().get('tasks', [])
 
+    print "WER HUR 3"
+
   # Ensures all the source locations are either absolute paths or relative to
   # the nupic.datafiles package_data location.
   expIface.normalizeStreamSources()
@@ -404,6 +406,9 @@ def _runExperimentImpl(options, model=None):
 
     assert model is None
 
+    print "WER HUR"
+    assert False
+
     checkpointName = options.privateOptions['runCheckpointName']
 
     model = ModelFactory.loadFromCheckpoint(
@@ -421,6 +426,9 @@ def _runExperimentImpl(options, model=None):
     _saveModel(model=model,
                experimentDir=experimentDir,
                checkpointLabel=checkpointName)
+
+    print "WER HUR 2"
+    assert False
 
     return model
 
