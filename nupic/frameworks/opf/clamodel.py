@@ -614,7 +614,7 @@ class CLAModel(Model):
 
       if not self._predictedFieldName in self._input:
         raise ValueError(
-          "Expected predicted field '%s' in input row, but was not found!" 
+          "Expected predicted field '%s' in input row, but was not found!"
           % self._predictedFieldName
         )
       # Calculate the anomaly score using the active columns
@@ -1034,6 +1034,11 @@ class CLAModel(Model):
     # Create the network
     n = Network()
 
+    print sensorParams
+    print spParams
+    print tpParams
+    print clParams
+    print anomalyParams
 
     #--------------------------------------------------
     # Add the Sensor
