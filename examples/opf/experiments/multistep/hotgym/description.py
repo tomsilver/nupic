@@ -159,17 +159,16 @@ config = {
             'sensorAutoReset' : None,
         },
 
-        'spEnable': False,
+        'spEnable': True,
 
         'spParams': {
+            # Spatial pooler implementation to use.
+            # Options: "py" (slow, good for debugging), and "cpp" (optimized).
+            'spatialImp': 'cpp',
+
             # SP diagnostic output verbosity control;
             # 0: silent; >=1: some info; >=2: more info;
             'spVerbosity' : 0,
-
-            # Spatial Pooler implementation selector, see getSPClass
-            # in py/regions/SPRegion.py for details
-            # 'py' (default), 'cpp' (speed optimized, new)
-            'spatialImp' : 'NOT A REAL THING',
 
             'globalInhibition': 1,
 
@@ -178,19 +177,16 @@ config = {
             # (see also tpNCellsPerCol)
             'columnCount': 2048,
 
-            'inputWidth': 0,
-
             # SP inhibition control (absolute value);
             # Maximum number of active columns in the SP region's output (when
             # there are more, the weaker ones are suppressed)
-            'numActiveColumnsPerInhArea': 1,
+            'numActiveColumnsPerInhArea': 40,
 
             'seed': 1956,
 
             # potentialPct
             # What percent of the columns's receptive field is available
-            # for potential synapses. At initialization time, we will
-            # choose potentialPct * (2*potentialRadius+1)^2
+            # for potential synapses.
             'potentialPct': 0.5,
 
             # The default connected threshold. Any synapse whose
@@ -204,9 +200,11 @@ config = {
             # is correct here as opposed to 'columns')
             'synPermConnected': 0.1,
 
-            'synPermActiveInc': 0.1,
+            'synPermActiveInc': 0.05,
 
-            'synPermInactiveDec': 0.01,
+            'synPermInactiveDec': 0.0005,
+
+            'maxBoost': 2.0
         },
 
         # Controls whether TP is enabled or disabled;
@@ -326,7 +324,7 @@ config = {
 
   'predictionSteps': [1, 5],
   'predictedField': 'consumption',
-  'numRecords': 189,
+  'numRecords': 4000,
 }
 # end of config dictionary
 
