@@ -1074,9 +1074,9 @@ class CLAModel(Model):
 
       spParams = spParams.copy()
 
-      # print "WTF"
-      # print spParams
-      # assert False
+      print "WTF"
+      print spParams
+      assert False
 
 
       spParams['inputWidth'] = prevRegionWidth

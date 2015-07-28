@@ -105,7 +105,7 @@ config = {
         'spEnable': $SP_ENABLE,
 
         'spParams': {
-            # Spatial pooler implementation to use. 
+            # Spatial pooler implementation to use.
             # Options: "py" (slow, good for debugging), and "cpp" (optimized).
             'spatialImp': 'cpp',
 
@@ -131,7 +131,7 @@ config = {
 
             # potentialPct
             # What percent of the columns's receptive field is available
-            # for potential synapses. 
+            # for potential synapses.
             'potentialPct': $SP_POOL_PCT,
 
             # The default connected threshold. Any synapse whose
@@ -147,8 +147,8 @@ config = {
 
             'synPermActiveInc': 0.05,
 
-            'synPermInactiveDec': 0.0005,
-            
+            'synPermInactiveDec': 0.0006,
+
             'maxBoost': 2.0
         },
 
@@ -229,7 +229,7 @@ config = {
 
         'clParams': {
             'regionName' : 'CLAClassifierRegion',
-            
+
             # Classifier diagnostic output verbosity control;
             # 0: silent; [1..6]: increasing levels of verbosity
             'clVerbosity' : 0,
