@@ -1077,7 +1077,7 @@ class CLAModel(Model):
 
       spParams = spParams.copy()
 
-      # print "WTF"
+      print "WTF"
       print "SP PARAMS:"
       print spParams
       # assert False
