@@ -530,7 +530,7 @@ def prepareNupicCore(options, platform, bitness):
   if nupicCoreReleaseDir is not None:
     nupicCoreReleaseDir = os.path.expanduser(nupicCoreReleaseDir)
   nupicCoreSourceDir = None
-  fetchNupicCore = True
+  fetchNupicCore = False
 
   if nupicCoreReleaseDir:
     # User specified that they have their own nupic.core
@@ -633,8 +633,9 @@ options = getCommandLineOptions()
 platform, bitness = getPlatformInfo()
 
 if platform == DARWIN_PLATFORM and not "ARCHFLAGS" in os.environ:
-  raise Exception("To build NuPIC in OS X, you must "
-                  "`export ARCHFLAGS=\"-arch x86_64\"`.")
+  os.environ["ARCHFLAGS"] = '-arch x86_64'
+  # raise Exception("To build NuPIC in OS X, you must "
+  #                 "`export ARCHFLAGS=\"-arch x86_64\"`.")
 
 # Build and setup NuPIC
 cwd = os.getcwd()
